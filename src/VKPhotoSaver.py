@@ -8,7 +8,7 @@ VKtoken = ''
 URL = 'https://api.vk.com/method/photos.getAll?v=5.194'
 
 def get_photo_list(offset=0, count=20):
-    """ Create a list of links to photos
+    """ Create a list of links to photo.
 
     Args:
         offset (int, optional): _description_. Defaults to 0.
@@ -40,7 +40,7 @@ def get_photo_list(offset=0, count=20):
         return photo_url + get_photo_list(offset+count, count)
 
 def save_photos():
-    """ Function saves photos
+    """ The function saves photos.
     """
     photos_list = get_photo_list()
     name = []
@@ -54,7 +54,7 @@ def save_photos():
         sql.upload_photo(filename, api.content) 
 
 def sql_data_output():
-    """ Function saves data from the database to a TXT file
+    """ The function saves data from the database to a TXT file.
     """
     data = []
     querys=["timestamp", "filename"]
@@ -69,7 +69,7 @@ def sql_data_output():
 
 
 def sql_delete_data():
-    """ Function deletes data from the database table by line(if "data" is empty, it deletes all data)
+    """ The function deletes data from the database table by line(if "data" is empty, it deletes all data).
     """
     data = []
     if not data:
@@ -80,7 +80,7 @@ def sql_delete_data():
 
 
 def save_on_pc(name, filename, photo):
-    """ Function saves photos on PC
+    """ The function saves photos on PC.
 
     Args:
         name (list): list of names for numbering each file

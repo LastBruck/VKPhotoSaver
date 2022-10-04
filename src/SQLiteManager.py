@@ -19,6 +19,15 @@ class SqliteManager:
 
 
     def contains(self, checkfield=str, value=str|int|bytes):
+        """ Сhecks the data in the field for repetition.
+
+        Args:
+            checkfield (str, optional): _description_. Defaults to str.
+            value (str|int|bytes, optional): _description_. Defaults to str | int | bytes.
+
+        Returns:
+            bool: _description_
+        """
 
         result = self.select([checkfield], checkfield, value)
 
